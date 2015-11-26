@@ -1,0 +1,63 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>DiningKode</title>
+    <meta name="description" content="DiningKode">
+    <meta name="author" content="You!">
+
+    <style>
+        html, body, div, form, fieldset, legend, label {
+         margin: 0;
+         padding: 0;
+        }
+        header {
+            height: 50px;
+            background-color: red;
+        }
+        header div {
+            text-align: center;
+            padding-top: 15px;
+        }
+        header div a {
+            color: white;
+        }
+        main {
+            width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+        li {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+    <div>
+        <a href="/">Home</a>
+
+    </div>
+    </header>
+    <main>
+
+        <h1>Restaurants that have ratings greater than {{ value }}</h1>
+        {% for resto in rated_restaurants %}
+                <li>
+                    <section>
+                            <img src="{{ resto.image }}" alt="" width="300">
+                            <ul>
+                                <li>name: {{ resto.name }}</li>
+                                <li>rating: {{ resto.rating }}</li>
+                                <li>phone: {{ resto.phone }}</li>
+                                <li>address: {{ resto.address }}</li>
+                            </ul>
+                    </section>
+                </li>
+        {% endfor %}
+    </main>
+</body>
+</html>
